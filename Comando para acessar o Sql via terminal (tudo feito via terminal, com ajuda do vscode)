@@ -1,0 +1,43 @@
+Abra o terminal e digite: mysql -h localhost -u root -p
+em seguida vai pedir minha senha, eu coloco e estou dentro.
+
+para ver as tabelas ja criadas : SHOW DATABASES;
+
+Criando um novo banco de dados:  CREATE DATABASE SistemaDeCadastro;
+
+acessando o database criado(SistemaDeCadastro): USE SistemaDeCadastro;
+
+mostrando as tabelas: SHOW TABLES;
+
+criando uma tabela, va até o vs code, crie um arquivo exemplo "tabela.sql" e coloque os dados exemplo: CREATE TABLE usuarios(
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    idade INT
+
+);
+em seguida copie a tabela e cole no terminal e de OK e pronto
+
+
+para ver a estrutura da tabela digite isso: DESCRIBE usuarios; (usuarios é o nome da tabela que eu criei)
+
+
+Inserindo dados na tabela, va até o vs code e no arquivo .sql criado coloque os valores, exemplo: INSERT INTO usuarios(nome, email, idade) VALUES(
+    "vitor",
+    "vitorbrussolo@gmail.com",
+    28
+);
+em seguida copie e cole no terminal e pronto
+OBS: lembrando que tanto para criar a tabela quanto para inserir usuario pode ser feito direto no terminal, porém no vscode é mais facil ai é só ctrl+v ctrl+c
+
+>>>>>mostrando os usuarios cadastrados na tabela, digite no terminal: SELECT * FROM usuarios;<<<<<
+
+fazendo pesquisas especificas para encontrar um nome especifico, um email especifico ou idade especifica no terminal digite: SELECT * FROM usuarios WHERE idade = 20;
+ou SELECT * FROM usuarios WHERE nome = "vitor" (repare nas "" quando é VARCHAR)
+ou SELECT * FROM usuarios WHERE idade >= 5;
+
+utilizando o delete no terminal: DELETE FROM usuarios; (toda tabela será excluida)
+deletando algo especifico exemplo, nome ou email ou id...: DELETE FROM usuarios WHERE nome = "vitor"
+
+
+alterando um nome que esta na tabela, no terminal digite: UPDATE usuarios SET nome = "Giovanna" WHERE nome = "Gi (estava "Gi" e ficou "Giovanna")
+>>>>>LEMBRANDO EM UPDATE E DELETE SEMPRE COLOQUE O WHERE !!!<<<<<
